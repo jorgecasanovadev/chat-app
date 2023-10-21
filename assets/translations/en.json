@@ -1,0 +1,9 @@
+{
+    "name": "VCA Chat",
+    "internetConnection": {
+        "toast": {
+            "connected": "Conectado a internet.",
+            "notConnected": "Rayos te encuentras sin conexión a internet, intentalo más tarde cuando vuelvas a conectarte."
+        }
+    }
+}
