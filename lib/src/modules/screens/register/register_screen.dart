@@ -7,24 +7,26 @@ import 'package:vca_chat/src/modules/widgets/buttons/button.dart';
 import 'package:vca_chat/src/modules/widgets/customs/custom_textfield.dart';
 
 @RoutePage()
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final usernameController = TextEditingController();
+class _RegisterScreenState extends State<RegisterScreen> {
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
   bool _isShowPassword = false;
 
-  void signIn() {}
+  void signUp() {}
 
   @override
   void dispose() {
-    usernameController.dispose();
+    emailController.dispose();
     passwordController.dispose();
+    confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -48,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 20),
               Text(
-                'screen.auth.login.initMessage'.tr(),
+                'screen.auth.register.initMessage'.tr(),
                 textAlign: TextAlign.center,
                 style: TypographyStyle.h5.w400.grey100,
               ),
@@ -56,16 +58,16 @@ class _LoginScreenState extends State<LoginScreen> {
               CustomTextField(
                 hintText: 'Email',
                 fillColor: white,
-                controller: usernameController,
+                controller: emailController,
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return 'screen.auth.login.enterUser'.tr();
+                    return 'screen.auth.register.enterUser'.tr();
                   }
                   return null;
                 },
               ),
               CustomTextField(
-                hintText: 'Password',
+                hintText: 'Contraseña',
                 fillColor: white,
                 controller: passwordController,
                 suffixIcon: InkWell(
@@ -81,7 +83,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: _isShowPassword,
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return 'screen.auth.login.enterPassword'.tr();
+                    return 'screen.auth.register.enterPassword'.tr();
+                  }
+                  return null;
+                },
+              ),
+              CustomTextField(
+                hintText: 'Confirmar contraseña',
+                fillColor: white,
+                controller: confirmPasswordController,
+                suffixIcon: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _isShowPassword = !_isShowPassword;
+                    });
+                  },
+                  child: _isShowPassword
+                      ? const Icon(Icons.remove_red_eye)
+                      : const Icon(Icons.visibility_off),
+                ),
+                obscureText: _isShowPassword,
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'screen.auth.register.confirmPassword'.tr();
                   }
                   return null;
                 },
@@ -90,8 +114,8 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ButtonWidget(
-                  onPressed: signIn,
-                  label: 'screen.auth.login.enter'.tr(),
+                  onPressed: signUp,
+                  label: 'screen.auth.register.register'.tr(),
                 ),
               ),
               const SizedBox(height: 50),
@@ -99,17 +123,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '¿Aún no eres miembro?',
+                    '¿Eres miembro?',
                     style: TypographyStyle.b1.black54,
                   ),
                   const SizedBox(width: 5),
                   InkWell(
                     onTap: () {
-                      router.push(const RegisterRoute());
+                      router.push(const LoginRoute());
                       Navigator.pop(context);
                     },
                     child: Text(
-                      'screen.auth.login.registerSection'.tr(),
+                      'screen.auth.register.initialSection'.tr(),
                       style: TypographyStyle.b1.w600,
                     ),
                   ),

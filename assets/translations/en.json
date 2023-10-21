@@ -5,5 +5,24 @@
             "connected": "Conectado a internet.",
             "notConnected": "Rayos te encuentras sin conexión a internet, intentalo más tarde cuando vuelvas a conectarte."
         }
+    },
+    "screen": {
+        "auth": {
+            "register": {
+                "initMessage": "¡Creemos una cuenta para tí!",
+                "register": "Registrar",
+                "initialSection": "Iniciar sesión",
+                "enterUser": "Por favor ingresa el usuario",
+                "enterPassword": "Por favor ingresa la contraseña",
+                "confirmPassword": "Por favor confirme la contraseña"
+            },
+            "login": {
+                "initMessage": "VCA Chat \nBienvenido de nuevo",
+                "enter": "Ingresar",
+                "registerSection": "Registrarse ahora",
+                "enterUser": "Por favor ingresa el usuario",
+                "enterPassword": "Por favor ingresa la contraseña"
+            }
+        }
     }
 }
