@@ -9,8 +9,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
-import 'package:vca_chat/src/modules/screens/login/login_screen.dart' as _i1;
-import 'package:vca_chat/src/modules/screens/register/register_screen.dart'
+import 'package:vca_chat/src/modules/screens/auth/login/login_screen.dart'
+    as _i1;
+import 'package:vca_chat/src/modules/screens/auth/register/register_screen.dart'
     as _i2;
 
 abstract class $AppRouter extends _i3.RootStackRouter {
