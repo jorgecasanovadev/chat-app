@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:vca_chat/src/modules/screens/auth/auth_screen.dart';
 import 'package:vca_chat/src/modules/screens/home/home_screen.dart';
-import 'package:vca_chat/src/modules/screens/auth/login/login_screen.dart';
 
 class FirebaseAuthGate extends StatelessWidget {
   const FirebaseAuthGate({super.key});
@@ -16,7 +16,7 @@ class FirebaseAuthGate extends StatelessWidget {
           if (snapshot.hasData) {
             return const HomeScreen();
           } else {
-            return const LoginScreen();
+            return const AuthScreen();
           }
           // user not logged
         },

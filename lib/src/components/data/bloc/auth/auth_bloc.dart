@@ -106,7 +106,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       password: password,
     );
 
-    if (result.user!.email != null) {
+    if (result.user!.email == null) {
       final result = await _generateSession(username: email);
       return {
         'route': '/home',
