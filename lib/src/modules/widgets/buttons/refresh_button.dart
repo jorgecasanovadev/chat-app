@@ -3,9 +3,9 @@ import 'package:vca_chat/src/modules/themes/themes.dart';
 
 class RefreshButton extends StatelessWidget {
   const RefreshButton({
-    super.key,
     required this.title,
     required this.onPressed,
+    super.key,
   });
 
   final String title;

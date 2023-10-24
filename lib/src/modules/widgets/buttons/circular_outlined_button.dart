@@ -3,9 +3,9 @@ import 'package:vca_chat/src/modules/themes/themes.dart';
 
 class CircularOutlinedButton extends StatelessWidget {
   const CircularOutlinedButton({
-    super.key,
     required this.onPressed,
     required this.text,
+    super.key,
     this.enabled = true,
   });
   final bool enabled;

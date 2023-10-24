@@ -3,11 +3,11 @@ import 'package:vca_chat/src/modules/themes/themes.dart';
 
 class CircularElevatedButton extends StatelessWidget {
   const CircularElevatedButton({
-    super.key,
     required this.onPressed,
     required this.startIcon,
     required this.endIcon,
     required this.text,
+    super.key,
   });
   final Icon startIcon;
   final Icon endIcon;
@@ -44,10 +44,10 @@ class CircularElevatedButton extends StatelessWidget {
                     child: Text(
                       text,
                     ),
-                  )
+                  ),
                 ],
               ),
-              endIcon
+              endIcon,
             ],
           ),
         ),

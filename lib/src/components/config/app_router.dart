@@ -9,9 +9,11 @@ class AppRouter extends $AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: AuthRoute.page, path: '/', initial: true),
+        AutoRoute(page: FirebaseAuthGateRoute.page, path: '/', initial: true),
         AutoRoute(page: HomeRoute.page, path: '/home'),
-        // AutoRoute(page: LoginView.page, path: '/login'),
-        // AutoRoute(page: RegisterView.page, path: '/register'),
+        AutoRoute(page: ChatRoute.page, path: '/chatPage'),
+        AutoRoute(page: AuthRoute.page, path: '/auth'),
+        AutoRoute(page: LoginView.page, path: '/login'),
+        AutoRoute(page: RegisterView.page, path: '/register'),
       ];
 }

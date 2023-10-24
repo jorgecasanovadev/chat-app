@@ -12,7 +12,7 @@ Future<void> initLogs() async {
         LogLevel.INFO,
         LogLevel.WARNING,
         LogLevel.ERROR,
-        LogLevel.SEVERE
+        LogLevel.SEVERE,
       ],
       timeStampFormat: TimeStampFormat.TIME_FORMAT_READABLE,
       directoryStructure: DirectoryStructure.FOR_DATE,

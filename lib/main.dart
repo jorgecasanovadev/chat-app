@@ -1,14 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 import 'package:vca_chat/firebase_options.dart';
 import 'package:vca_chat/src/components/config/app_router.dart';
-import 'package:vca_chat/src/components/data/bloc/auth/auth_bloc.dart';
-import 'package:vca_chat/src/components/data/bloc/internet_connection/internet_connection_bloc.dart';
-import 'package:vca_chat/src/components/data/bloc/session/session_bloc.dart';
 import 'package:vca_chat/src/components/helpers/helpers.dart';
+import 'package:vca_chat/src/components/services/firebase/firebase_auth_service.dart';
 import 'package:vca_chat/src/core/base/injection.dart' as injection;
 import 'package:vca_chat/src/modules/themes/themes.dart';
 
@@ -23,22 +21,8 @@ void main() async {
   await injection.init();
 
   runApp(
-    MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => injection.sl<InternetConnectionBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => injection.sl<SessionBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => AuthBloc(
-            sessionBloc: BlocProvider.of<SessionBloc>(context),
-            internetConnectionBloc:
-                BlocProvider.of<InternetConnectionBloc>(context),
-          ),
-        ),
-      ],
+    ChangeNotifierProvider(
+      create: (context) => FirebaseAuthService(),
       child: EasyLocalization(
         supportedLocales: const [
           Locale('es', ''),
@@ -60,7 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'name'.tr(),
       theme: ChatAppTheme.lighTheme.copyWith(
-        appBarTheme: Theme.of(context).appBarTheme.copyWith(color: secondColor),
+        appBarTheme: Theme.of(context).appBarTheme.copyWith(color: firstColor),
       ),
       routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(),

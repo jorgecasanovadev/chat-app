@@ -142,7 +142,7 @@ class AColors {
     shadows: [
       BoxShadow(
         offset: Offset(0.5, .5),
-      )
+      ),
     ],
   );
   static InputDecoration dragInputDecoration(String text) => InputDecoration(
