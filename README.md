@@ -1,9 +1,3 @@
-# vca_chat
-
-A new Flutter project.
-
-## Getting Started
-
 # Chat-App
 Flutter's application basic chat app for private communication, the application has 2 core views, a list of all users, and a chat screen; it uses clean architecture, state management with Provider State, and automatic code generation using libraries such as Auto-Route
 
