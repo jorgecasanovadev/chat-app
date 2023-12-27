@@ -2,9 +2,9 @@
 Flutter's application basic chat app for private communication, the application has 2 core views, a list of all users, and a chat screen; it uses clean architecture, state management with Provider State, and automatic code generation using libraries such as Auto-Route
 
 > ## Getting Started
-- [SDK Verion](https://github.com/jorgecasanovadev/chat-appi#sdk-version): SDK version
+- [SDK Verion](https://github.com/jorgecasanovadev/chat-app#sdk-version): SDK version
 - [How to use](https://github.com/jorgecasanovadev/chat-app/tree/main#how-to-use): Initialize App
-- [Libraries and Tools](https://github.com/jorgecasanovadev/chat-appi#libraries--tools-used): Libraries and tools used
+- [Libraries and Tools](https://github.com/jorgecasanovadev/chat-app#libraries--tools-used): Libraries and tools used
 - [Screenshots](https://github.com/jorgecasanovadev/chat-app/tree/main#screenshot-screens): Screenshots of the app views
 
 <hr align"center">
